@@ -90,9 +90,9 @@ def getRandColor():
 def set_led_level(ttl_leds, val):
     for i in range(ttl_leds):
         if i < val:
-            strip.setPixelColor(i, Color(255,0,0)
+            strip.setPixelColor(i, Color(255,0,0))
         else:
-            strip.setPixelColor(i, Color(0,255,0)
+            strip.setPixelColor(i, Color(0,255,0))
 
 # while
 
