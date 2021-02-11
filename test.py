@@ -122,7 +122,7 @@ if __name__ == '__main__':
             # theaterChaseRainbow(strip)
 
             for i in range(10):
-                strip.setPixelColor(getRandPix(), getRandPix())
+                strip.setPixelColor(getRandPix(), getRandColor())
 
             strip.show()
             time.sleep(0.25)
