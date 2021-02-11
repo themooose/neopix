@@ -125,7 +125,7 @@ if __name__ == '__main__':
                 strip.setPixelColor(getRandPix(), getRandPix())
 
             strip.show()
-
+            time.sleep(0.25)
 
 
 
