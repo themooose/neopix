@@ -5,6 +5,9 @@ from random import randrange
 import time
 from rpi_ws281x import *
 import argparse
+import psutil
+
+
 # LED strip configuration:
 LED_COUNT      = 24      # Number of LED pixels.
 LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
@@ -121,11 +124,19 @@ if __name__ == '__main__':
             # rainbowCycle(strip)
             # theaterChaseRainbow(strip)
 
-            for i in range(10):
-                strip.setPixelColor(getRandPix(), getRandColor())
+            mem_pct = psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
+            mem_light_count = int(round(LED_COUNT * mem_pct))
+            
+
+
+            for i in range(LED_COUNT):
+                if i < mem_light_count:
+                    strip.setPixelColor(i, Color(255,0,0)
+                else:
+                    strip.setPixelColor(i, Color(0,255,0)
 
             strip.show()
-            time.sleep(0.25)
+            time.sleep(0.2)
 
 
 
