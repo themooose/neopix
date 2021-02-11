@@ -132,7 +132,7 @@ if __name__ == '__main__':
             # theaterChaseRainbow(strip)
 
             mem_pct = psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
-            mem_light_count = int(round(LED_COUNT * mem_pct))
+            mem_light_count = int(round(LED_COUNT * (mem_pct/100)))
 
             # set_led_level(LED_COUNT, mem_light_count)
             
