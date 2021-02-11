@@ -87,6 +87,13 @@ def getRandPix():
 def getRandColor():
     return Color(randrange(256),randrange(256),randrange(256))
 
+def set_led_level(ttl_leds, val):
+    for i in range(ttl_leds):
+        if i < val:
+            strip.setPixelColor(i, Color(255,0,0)
+        else:
+            strip.setPixelColor(i, Color(0,255,0)
+
 # while
 
 # #                  (led, color)
@@ -126,17 +133,11 @@ if __name__ == '__main__':
 
             mem_pct = psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
             mem_light_count = int(round(LED_COUNT * mem_pct))
+
+            set_led_level(LED_COUNT, mem_light_count)
             
-
-
-            for i in range(LED_COUNT):
-                if i < mem_light_count:
-                    strip.setPixelColor(i, Color(255,0,0)
-                else:
-                    strip.setPixelColor(i, Color(0,255,0)
-
             strip.show()
-            time.sleep(0.2)
+            time.sleep(0.5)
 
 
 
