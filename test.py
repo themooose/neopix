@@ -134,9 +134,11 @@ if __name__ == '__main__':
             mem_pct = psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
             mem_light_count = int(round(LED_COUNT * mem_pct))
 
-            set_led_level(LED_COUNT, mem_light_count)
+            # set_led_level(LED_COUNT, mem_light_count)
             
-            strip.show()
+            # strip.show()
+            print((LED_COUNT, mem_pct, mem_light_count))
+
             time.sleep(0.5)
 
 
